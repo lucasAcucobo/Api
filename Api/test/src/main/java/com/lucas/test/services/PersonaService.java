@@ -64,7 +64,6 @@ public class PersonaService implements PersonaRepository {
 
     @Override
     public String getNameById(Long id) {
-        PersonaMapper row = new PersonaMapper();
         return jdbcTemplate.queryForObject("select nombre from persona where id="+id,String.class);
     }
     
