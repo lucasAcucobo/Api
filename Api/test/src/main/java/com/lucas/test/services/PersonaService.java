@@ -22,11 +22,6 @@ public class PersonaService implements PersonaRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @Override
-    public String count() {
-        return jdbcTemplate
-                .queryForObject("select count(*) from persona", Integer.class)+"";
-    }
 
     @Override
     public String save(@RequestBody PersonaModel persona) {
@@ -64,7 +59,6 @@ public class PersonaService implements PersonaRepository {
 
     @Override
     public String getNameById(Long id) {
-        PersonaMapper row = new PersonaMapper();
         return jdbcTemplate.queryForObject("select nombre from persona where id="+id,String.class);
     }
     

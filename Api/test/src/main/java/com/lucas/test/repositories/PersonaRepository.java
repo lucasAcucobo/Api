@@ -5,7 +5,6 @@ import java.util.List;
 import com.lucas.test.models.PersonaModel;
 
 public interface PersonaRepository {
-    String count();
 
     String save(PersonaModel persona);
 
